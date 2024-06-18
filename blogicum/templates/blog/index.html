@@ -9,18 +9,7 @@
         <!-- Перебираем в цикле все посты -->
         {% for i in post %}
         <hr>
-        <article>
-          <ul>
-            <li>
-              Место: {{ i.location }}              
-            </li>
-            <li>
-              Дата: {{ i.date }}
-            </li>
-            <li>
-              Категория: <a href=<a  href="{% url 'blog:category_posts' i.category %}">{{ i.category }}</a>
-            </li>
-          </ul>          
+        {% include 'includes/article.html' %}     
           <!-- Первые 10 слов -->
           <p>
             {{ i.text|truncatewords:10}}...
